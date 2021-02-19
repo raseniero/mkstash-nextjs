@@ -50,8 +50,6 @@ export default function Layout({ children, categories }) {
                     </a>
                   </Link>
                 ))
-
-                ,console.log(categories)
               }
               <Link href="/categories">
                 <a aria-label="All categories">
