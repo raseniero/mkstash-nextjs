@@ -46,6 +46,10 @@ const Category = (props) => {
 
 export async function getStaticPaths () {
   const categories = await fetchCategories()
+
+  // console.log("[name].categories=")
+  // console.log(categories)
+
   const paths = categories.map(category => {
     return { params: { name: slugify(category) }}
   })
@@ -56,7 +60,12 @@ export async function getStaticPaths () {
 }
 
 export async function getStaticProps ({ params }) {
+  // console.log("[name].params=")
+  // console.log(params)
   const category = params.name.replace(/-/g," ")
+  debugger
+  // console.log("[name].category=")
+  // console.log(category)
   const inventory = await inventoryForCategory(category)
   return {
     props: {

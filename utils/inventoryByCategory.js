@@ -1,4 +1,7 @@
 function inventoryByCategory (inventory) {
+  console.log("inventoryByCategory.inventory=")
+  console.log(inventory)
+
   return inventory.reduce((acc, next) => {
     const categories = next.categories
     categories.forEach(c => {

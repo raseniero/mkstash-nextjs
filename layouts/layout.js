@@ -5,6 +5,9 @@ import { ToastContainer } from 'react-toastify'
 import { navItemLength } from '../ecommerce.config'
 
 export default function Layout({ children, categories }) {
+  // console.log("layout.categories=")
+  // console.log(categories)
+
   if (categories.length > navItemLength) {
     categories = categories.slice(0, navItemLength)
   }

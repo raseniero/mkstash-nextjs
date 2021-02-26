@@ -1,4 +1,5 @@
 import inventory from './inventory'
+import fetchAPI, { getAllInventory } from '../lib/api'
 
 /*
 Inventory items should adhere to the following schema:
@@ -16,7 +17,26 @@ type Product {
 */
 
 async function fetchInventory() {
-  // const inventory = API.get(apiUrl)
+  const inventory = await getAllInventory()
+
+  inventory.map((postData) => {
+    const categories = postData.categories
+    
+    //console.log("inventoryProvider.categories=")
+    //console.log(categories)
+
+    const category_temp = []
+    categories.map((cat) => {
+      //console.log("inventoryProvider.cat.name=" + cat.name)
+      category_temp.push(cat.name)
+    })
+
+    postData.categories = category_temp
+  })
+
+  //console.log("inventoryProvider.inventory=")
+  //console.log(inventory)
+
   return Promise.resolve(inventory)
 }
 

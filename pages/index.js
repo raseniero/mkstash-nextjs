@@ -8,6 +8,11 @@ const Home = ({ inventoryData = [], categories: categoryData = [] }) => {
   const inventory = inventoryData.slice(0, 4)
   const categories = categoryData.slice(0, 2)
 
+  console.log("index.inventory")
+  console.log(inventory)
+  console.log("index.categories=")
+  console.log(categories)
+
   return (
     <>
       <CartLink />
